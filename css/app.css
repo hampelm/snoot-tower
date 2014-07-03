@@ -1,12 +1,30 @@
 * {
   margin: 0;
   padding: 0;
+  line-height: 1;
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "PT Sans Narrow", Helvetica, sans-serif;
 }
 
-#map {
-  height: 250px;
+.floor {
+  height: 60px;
+  border: 3px double #303330;
+  border-width:6px 0 6px;
+  background: #c4c2c4;
+}
+
+.restaurant {
+  width: 200px;
+  height: 57px;
+  background: #fcfae4;
+  border-bottom: 3px solid #ccc69c;
+  float: left;
+  line-height: 60px;
+  text-align: center;
+}
+
+.restaurant:hover {
+  cursor: pointer;
 }

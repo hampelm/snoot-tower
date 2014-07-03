@@ -4,6 +4,7 @@
 
 define([
   'jquery',
+  'jqueryui',
   'underscore',
   'backbone',
   'lib/leaflet/leaflet',
@@ -13,19 +14,31 @@ define([
 function($, _, Backbone, L, settings) {
   'use strict';
 
-  // Here's the dashboard app:
-  // So fancy!
   var App = {};
 
-  // Kick off the LocalData app
+  function helper() {
+    return '<div>Hey</div>';
+  }
+
+  function handleDrop(event, ui) {
+    var $canvas = $(event.target);
+    var $elt = ui.draggable.clone();
+    $elt.html('Restaurant');
+    $canvas.append($elt);
+  }
+
   App.initialize = function() {
     console.log("Initalizing app");
-
-    this.map = new L.map('map', {
-      zoom: 15,
-      center: [37.77585785035733, -122.41362811351655]
+    $('.draggable').draggable({
+      containment: 'document',
+      cursor: 'move',
+      helper: 'clone'
     });
-    L.tileLayer(settings.baseLayer).addTo(this.map);
+
+    $('.floor').droppable({
+      drop: handleDrop,
+      accept: '.draggable'
+    });
   };
 
   return App;

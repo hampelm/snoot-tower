@@ -6,20 +6,19 @@ require.config({
     async: 'lib/async',
     backbone: 'lib/backbone',
     jquery: 'lib/jquery',
+    jqueryui: 'lib/jquery-ui',
     moment: 'lib/moment.min',
     text: 'lib/text',
     underscore: 'lib/underscore'
   },
 
   shim: {
-    'lib/leaflet/leaflet': {
-      exports: 'L'
-    }
+    jqueryui: 'jquery'
   }
 });
 
-require(['jquery', 'underscore', 'backbone', 'app'],
-        function ($, _, Backbone, app) {
+require(['jquery', 'jqueryui', 'underscore', 'backbone', 'app'],
+        function ($, ui, _, Backbone, app) {
   'use strict';
 
   $(document).ready(function () {
