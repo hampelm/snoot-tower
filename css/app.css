@@ -15,15 +15,38 @@ body {
   background: #c4c2c4;
 }
 
+.restaurant,
+.shaft {
+  line-height: 60px;
+  text-align: center;
+  position: relative;
+}
+
 .restaurant {
   width: 200px;
   height: 57px;
   background: #fcfae4;
   border-bottom: 3px solid #ccc69c;
-  float: left;
-  line-height: 60px;
-  text-align: center;
+  line-height: 56px;
 }
+
+  .floor .restaurant {
+    float: left;
+  }
+
+.shaft {
+  height: 60px;
+  width: 48px;
+  background: #242624;
+  border-left: 6px solid #1c1a1c;
+  border-right: 6px solid #1c1a1c;
+  color: #ccc69c;
+}
+
+  .floor .shaft {
+    position: absolute;
+    float: none;
+  }
 
 .restaurant:hover {
   cursor: pointer;

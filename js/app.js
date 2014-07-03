@@ -16,28 +16,43 @@ function($, _, Backbone, L, settings) {
 
   var App = {};
 
+    App.GRID = 60;
+
   function helper() {
     return '<div>Hey</div>';
   }
 
   function handleDrop(event, ui) {
+    console.log(event, ui);
     var $canvas = $(event.target);
     var $elt = ui.draggable.clone();
-    $elt.html('Restaurant');
     $canvas.append($elt);
+    $elt.offset({left: ui.position.left });
+    $('.shaft').resizable({
+      grid: App.GRID
+    });
   }
 
   App.initialize = function() {
     console.log("Initalizing app");
-    $('.draggable').draggable({
+    $('.restaurant').draggable({
       containment: 'document',
       cursor: 'move',
       helper: 'clone'
     });
 
+    $('.shaft').draggable({
+      containment: 'document',
+      cursor: 'move',
+      helper: 'clone'
+    });
+
+    $('.shaft').resizable({
+      grid: App.GRID
+    });
+
     $('.floor').droppable({
-      drop: handleDrop,
-      accept: '.draggable'
+      drop: handleDrop
     });
   };
 
