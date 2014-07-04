@@ -16,17 +16,18 @@ body {
 }
 
 .restaurant,
-.shaft {
-  line-height: 60px;
+.shaft,
+.car {
+  line-height: 54px;
   text-align: center;
   position: relative;
 }
 
 .restaurant {
-  width: 200px;
-  height: 57px;
+  width: 194px;
+  height: 54px;
   background: #fcfae4;
-  border-bottom: 3px solid #ccc69c;
+  border: 3px solid #ccc69c;
   line-height: 56px;
 }
 
@@ -44,10 +45,34 @@ body {
 }
 
   .floor .shaft {
-    position: absolute;
+    position: relative;
     float: none;
   }
 
 .restaurant:hover {
   cursor: pointer;
+}
+
+.car {
+  background: #e4e6fc;
+  border: 3px solid #b4b2fc;
+  border-bottom-color: #ccc69c;
+  height: 50px;
+  width: 42px;
+  position: absolute;
+  top: 3px;
+  -webkit-animation: elevate 5s ease infinite;
+}
+
+@-webkit-keyframes elevate {
+    0% {
+      top: 3px;
+    }
+    50% {
+      top: auto;
+      bottom: 0;
+    }
+    100% {
+      top: 3px;
+    }
 }

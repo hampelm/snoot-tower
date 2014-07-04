@@ -4,21 +4,22 @@
 require.config({
   paths: {
     async: 'lib/async',
-    backbone: 'lib/backbone',
     jquery: 'lib/jquery',
     jqueryui: 'lib/jquery-ui',
     moment: 'lib/moment.min',
     text: 'lib/text',
-    underscore: 'lib/underscore'
+    underscore: 'lib/underscore',
+    backbone: 'lib/backbone'
   },
 
   shim: {
-    jqueryui: 'jquery'
+    jqueryui: 'jquery',
+    "lib/jquery.overlaps": ["jquery"]
   }
 });
 
-require(['jquery', 'jqueryui', 'underscore', 'backbone', 'app'],
-        function ($, ui, _, Backbone, app) {
+require(['jquery', 'jqueryui', 'lib/jquery.overlaps', 'underscore', 'backbone', 'app'],
+        function ($, ui, overlaps, _, Backbone, app) {
   'use strict';
 
   $(document).ready(function () {
