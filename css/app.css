@@ -16,12 +16,16 @@ body {
 }
 
 .restaurant,
+.shaft {
+  display: inline-block;
+}
+
+.restaurant,
 .shaft,
 .car {
   line-height: 54px;
   text-align: center;
   position: relative;
-  display: inline-block;
 }
 
 .restaurant {
